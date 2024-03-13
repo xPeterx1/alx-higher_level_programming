@@ -2,15 +2,16 @@
 def uppercase(str):
     A = ord('A')
     Z = ord('Z') + 1
-    n1 = ord('1')
+    n1 = ord('0')
     n2 = ord('9') + 1
     s1 = ord(" ")
-    s2 = ord("/")
+    s2 = ord("/") + 1
     upperconv = ord('a') - ord('A')
     newstring = []
     i = 0
     for c in str:
-        if ord(c) in range(A, Z) or ord(c) in range(s1, s2) or ord(c) in range(n1, n2):
+        i = ord(c)
+        if i in range(A, Z) or i in range(s1, s2) or i in range(n1, n2):
             newstring.append(c)
         else:
             i = ord(c) - upperconv
