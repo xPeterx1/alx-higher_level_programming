@@ -10,4 +10,4 @@ if __name__ == "__main__":
             print("{}: {}".format(arg + 1, args[arg]))
             arg += 1
     else:
-        print("0 arguments.")
+        print("0 arguments. ")
