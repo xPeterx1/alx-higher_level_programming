@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    if my_string:
+    if len(my_string) > 0:
         list = []
         list.extend(my_string)
         for i in list:
