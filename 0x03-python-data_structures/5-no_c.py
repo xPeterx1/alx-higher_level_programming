@@ -1,13 +1,4 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    list = []
-    nostring = my_string
-    list.extend(my_string)
-    for i in list:
-        if i == 'c' or i == 'C':
-            list.remove(i)
-    if (len(list) > 0):
-        newstring = "".join(list)
-        return newstring
-    else:
-        return nostring
+    new_copy = my_string.translate({ord(i): None for i in 'cC'})
+    return new_copy
