@@ -6,12 +6,7 @@ class Square:
     """square class"""
     def __init__(self, size=0):
         """constructor"""
-        if isinstance(size, int):
-            if (size < 0):
-                raise ValueError('size must be >= 0')
-            self.size = size
-        else:
-            raise TypeError('size must be an integer')
+        self.size = size
 
     def area(self):
         """AREA"""
@@ -25,4 +20,9 @@ class Square:
     @size.setter
     def size(self, value):
         """size setter"""
+        if isinstance(value, int):
+            if (value < 0):
+                raise ValueError('size must be >= 0')
+        else:
+            raise TypeError('size must be an integer')
         self.__size = value
