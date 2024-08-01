@@ -27,10 +27,10 @@ class Square:
             raise TypeError('size must be an integer')
         self.__size = value
 
-        def my_print(self):
-            """print square"""
-            if self.__size:
-                for i in range(self.__size):
-                    for j in range(self.__size):
-                        print('#', end="")
-                    print()
+    def my_print(self):
+        """print square"""
+        if self.__size:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print('#', end="")
+                print()
