@@ -2,7 +2,7 @@
 """ msh 3arf """
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """haaaa"""
     if isinstance(obj, a_class):
         return True
