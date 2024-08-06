@@ -5,7 +5,7 @@ The module defines """
 
 class Rectangle:
     """hello"""
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """constructor"""
         self.width = width
         self.height = height
