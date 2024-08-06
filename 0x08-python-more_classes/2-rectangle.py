@@ -34,5 +34,5 @@ class Rectangle:
         length = self.height * 2
         width = self.width * 2
         if (length and width):
-            return (lenght + width)
+            return (length + width)
         return (0)
