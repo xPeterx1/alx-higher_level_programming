@@ -16,9 +16,11 @@ class Rectangle:
 
     def __setattr__(self, name, value):
         """setter"""
-        if isinstance(value, int):
-            if value < 0:
-                raise ValueError(f"{name} must be >= 0")
-            self.__dict__[f"_Rectangle__{name}"] = value
-        else:
-            raise TypeError(f"{name} must be an integer")
+        if (name == "width" or name == "height"):
+            if isinstance(value, int):
+                if value < 0:
+                    raise ValueError(f"{name} must be >= 0")
+                self.__dict__[f"_Rectangle__{name}"] = value
+            else:
+                raise TypeError(f"{name} must be an integer")
+        self.__dict__[f"_Rectangle__{name}"] = value
