@@ -4,4 +4,5 @@ The module defines """
 
 
 class Rectangle:
+    """hello"""
     pass
