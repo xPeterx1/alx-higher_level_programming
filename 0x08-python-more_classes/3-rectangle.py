@@ -36,7 +36,7 @@ class Rectangle:
         if (length and width):
             return (length + width)
         return (0)
-    
+
     def __str__(self):
         """print square"""
         if self.height and self.width:
@@ -44,9 +44,8 @@ class Rectangle:
                 for j in range(self.width):
                     print('#', end="")
                 if (i == (self.height - 1)):
-                    return("")
+                    return ("")
                 print()
 
         else:
-            return("")
-        
+            return ("")
