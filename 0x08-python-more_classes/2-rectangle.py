@@ -1,73 +1,38 @@
-
 #!/usr/bin/python3
-"""Module 2-rectangle
-Defines a Rectangle class.
-"""
+"""Module 0-rectangle
+The module defines """
 
 
 class Rectangle:
-    """Rectangle class defined by width and height."""
-
+    """hello"""
     def __init__(self, width=0, height=0):
-        """Initializes a Rectangle instance.
-
-        Args:
-            width: width of the rectangle
-            height: height of the rectangle
-        """
+        """constructor"""
         self.width = width
         self.height = height
 
-    @property
-    def width(self):
-        """Retrieves the width of a Rectangle instance."""
-        return self.__width
+    def __getattr__(self, name):
+        """getter"""
+        return self.__dict__[f"_Rectangle__{name}"]
 
-    @width.setter
-    def width(self, value):
-        """Sets the width of a Rectangle instance
-
-        Args:
-            value: value of the width, must be a positive integer
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
-
-    @property
-    def height(self):
-        """Retrieves the height of a Rectangle instance."""
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """Sets the height of a Rectangle instance
-
-        Args:
-            value: value of the height, must be a positive integer
-        """
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
+    def __setattr__(self, name, value):
+        """setter"""
+        if (name == "width" or name == "height"):
+            if isinstance(value, int):
+                if value < 0:
+                    raise ValueError(f"{name} must be >= 0")
+                self.__dict__[f"_Rectangle__{name}"] = value
+            else:
+                raise TypeError(f"{name} must be an integer")
+        self.__dict__[f"_Rectangle__{name}"] = value
 
     def area(self):
-        """Calculates the area of a Rectangle instance
-
-        Returns:
-            Area of the the rectangle, given by height * width
-        """
-        return self.__width * self.__height
+        """area"""
+        return (self.width * self.height)
 
     def perimeter(self):
-        """Calculates the perimeter of a Rectangle instance
-
-        Returns:
-            Perimeter of the rectangle, given by 2 * (height + width)
-        """
-        if self.__height == 0 or self.__width == 0:
-            return 0
-        return 2 * (self.__width + self.__height)
+        """perimeter"""
+        length = self.height * 2
+        width = self.width * 2
+        if (length and width):
+            return (lenght + width)
+        return (0)
