@@ -1,4 +1,4 @@
 #!/usr/bin/node
-exports.addfunc = (x, y) => {
+exports.addfunc = function add (x, y) {
   return (x + y);
 };
