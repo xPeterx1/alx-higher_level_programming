@@ -6,9 +6,19 @@ if (args.length > 1) {
   let maxnumber = x[0];
   let secndmax;
   for (const i of x) {
-    if (i >= maxnumber) {
+    if (i === maxnumber) {
+      continue;
+    }
+    if (i > maxnumber) {
       secndmax = maxnumber;
       maxnumber = i;
+    } else {
+      if (!(secndmax)) {
+        secndmax = i;
+      }
+      if (secndmax < i) {
+        secndmax = i;
+      }
     }
   }
   console.log(secndmax);
