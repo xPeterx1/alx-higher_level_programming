@@ -3,7 +3,9 @@
 const x = process.argv?.slice(2);
 if (Number(x[0])) {
   const modarg = Math.floor(x[0]);
-  process.stdout.write(('c is fun\n').repeat(modarg));
+  for (let i = 0; i < modarg; i++) {
+    console.log('c is fun');
+  }
 } else {
   console.log('Missing number of occurrences');
 }
